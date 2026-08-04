@@ -1,5 +1,5 @@
-import type {AddressType} from "../enums"
-import {isNullOrWhiteSpace} from "../utils/utils"
+import type {AddressType} from "../enums.js"
+import {isNullOrWhiteSpace} from "../utils/utils.js"
 
 export class Address {
     readonly addressType: AddressType

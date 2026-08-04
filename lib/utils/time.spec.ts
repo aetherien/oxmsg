@@ -1,11 +1,10 @@
-import o from "ospec/ospec.js"
-import * as time from "./time.js"
+import o from "ospec"
 import {dateToFileTime, fileTimeToDate} from "./time.js"
 
 o.spec("time", function () {
-    const dateAndLabel = dateStr => [new Date(Date.parse(dateStr)), dateStr]
+    const dateAndLabel = (dateStr: string) => [new Date(Date.parse(dateStr)), dateStr] as const
 
-    const filetimeDateMap = [
+    const filetimeDateMap: Array<[bigint, Date, string]> = [
         [0n, ...dateAndLabel("01 Jan 1601 00:00:00 UTC")],
         [116444736000000000n, ...dateAndLabel("01 Jan 1970 00:00:00 UTC")],
         [132586423320000000n, ...dateAndLabel("24 Feb 2021 12:12:12 UTC")],

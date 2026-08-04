@@ -2,13 +2,11 @@ import nodeResolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
 import alias from '@rollup/plugin-alias'
-import typescript from '@rollup/plugin-typescript'
 import path from 'path'
 
 export default {
-	input: 'test/index.ts',
+	input: 'javascript/test/index.js',
 	plugins: [
-		typescript({tsconfig: "test/tsconfig.json"}),
 		alias({
 			entries: {
 				"uuid": path.resolve("./node_modules/uuid/dist/esm-node/index.js"),

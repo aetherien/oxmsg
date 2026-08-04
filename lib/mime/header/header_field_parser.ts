@@ -1,8 +1,8 @@
-import {ContentTransferEncoding, MailPriority} from "../../enums"
-import {isNullOrEmpty, unquote} from "../../utils/utils"
-import {decode as decodeRfc2047} from "./rfc2047"
-import {SizeParser} from "../decode/size_parser"
-import {Rfc2231Decoder} from "../decode/rfc2231decoder"
+import {ContentTransferEncoding, MailPriority} from "../../enums.js"
+import {isNullOrEmpty, unquote} from "../../utils/utils.js"
+import {decode as decodeRfc2047} from "./rfc2047.js"
+import {SizeParser} from "../decode/size_parser.js"
+import {Rfc2231Decoder} from "../decode/rfc2231decoder.js"
 
 export type ContentType = {
     mediaType: string

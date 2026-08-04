@@ -1,9 +1,9 @@
-import {TopLevelProperties} from "./top_level_properties"
-import {PropertyKind, PropertyType} from "../enums"
-import {PropertyTagLiterals} from "../property_tags"
-import {EntryStream, EntryStreamItem, IndexAndKindInformation} from "./entry_stream"
-import {GuidStream} from "./guid_stream"
-import {StringStream} from "./string_stream"
+import {TopLevelProperties} from "./top_level_properties.js"
+import {PropertyKind, PropertyType} from "../enums.js"
+import {PropertyTagLiterals} from "../property_tags.js"
+import {EntryStream, EntryStreamItem, IndexAndKindInformation} from "./entry_stream.js"
+import {GuidStream} from "./guid_stream.js"
+import {StringStream} from "./string_stream.js"
 
 type NamedProperty = {
     nameIdentifier: number

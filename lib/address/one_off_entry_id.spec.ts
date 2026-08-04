@@ -1,6 +1,6 @@
 import o from "ospec"
-import {OneOffEntryId} from "./one_off_entry_id"
-import {uint8ToBase16} from "../../test/utils"
+import {OneOffEntryId} from "./one_off_entry_id.js"
+import {uint8ToBase16} from "../../test/utils.js"
 
 o.spec("OneOffEntryId", function () {
     o("test value serialization", function () {

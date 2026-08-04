@@ -1,6 +1,6 @@
 import {makeByteBuffer} from "../utils/utils.js"
 import {PropertyTagLiterals} from "../property_tags.js"
-import {CFBStorage} from "../cfb_storage";
+import {CFBStorage} from "../cfb_storage.js";
 
 /**
  * The GUID stream MUST be named "__substg1.0_00020102". It MUST store the property set GUID

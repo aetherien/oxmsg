@@ -83,7 +83,7 @@ function findLongestMatch(dictionary: ByteBuffer, inputBuffer: ByteBuffer): Matc
  * @param input {Uint8Array} the input to compress
  * @returns {Uint8Array} compressed input
  */
-export function compress(input: Uint8Array): Uint8Array {
+export function compress(input: Uint8Array<ArrayBuffer>): Uint8Array<ArrayBuffer> {
     let matchData: MatchInfo = {
         length: 0,
         dictionaryOffset: 0,

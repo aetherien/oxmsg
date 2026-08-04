@@ -56,7 +56,7 @@ export function shortName(tag: PropertyTag | Property): string {
  * @param array {Uint8Array}
  * @returns {string}
  */
-export function utf8ArrayToString(array: Uint8Array): string {
+export function utf8ArrayToString(array: Uint8Array<ArrayBuffer>): string {
     return new TextDecoder().decode(array)
 }
 
@@ -65,7 +65,7 @@ export function utf8ArrayToString(array: Uint8Array): string {
  * @param str {string}
  * @returns {Uint8Array}
  */
-export function stringToUtf8Array(str: string): Uint8Array {
+export function stringToUtf8Array(str: string): Uint8Array<ArrayBuffer> {
     return new TextEncoder().encode(str)
 }
 
@@ -74,7 +74,7 @@ export function stringToUtf8Array(str: string): Uint8Array {
  * @param str {string}
  * @returns {Uint8Array|Uint8Array}
  */
-export function stringToUtf16LeArray(str: string): Uint8Array {
+export function stringToUtf16LeArray(str: string): Uint8Array<ArrayBuffer> {
     const u16 = Uint16Array.from(str.split("").map(c => c.charCodeAt(0)))
     return new Uint8Array(u16.buffer, u16.byteOffset, u16.byteLength)
 }
@@ -84,7 +84,7 @@ export function stringToUtf16LeArray(str: string): Uint8Array {
  * @param u8 {Uint8Array} raw bytes
  * @returns {string}
  */
-export function utf16LeArrayToString(u8: Uint8Array): string {
+export function utf16LeArrayToString(u8: Uint8Array<ArrayBuffer>): string {
     const u16 = new Uint16Array(u8.buffer, u8.byteOffset, u8.byteLength)
     // mapping directly over u16 insists on converting the result to Uint16Array again.
     return Array.from(u16)
@@ -97,7 +97,7 @@ export function utf16LeArrayToString(u8: Uint8Array): string {
  * @throws if the string contains characters not in the ANSI range (0-255)
  * @param str
  */
-export function stringToAnsiArray(str: string): Uint8Array {
+export function stringToAnsiArray(str: string): Uint8Array<ArrayBuffer> {
     const codes = str.split("").map(c => c.charCodeAt(0))
     if (codes.findIndex(c => c > 255) > -1) throw new Error("can't encode ansi string with char codes > 255!")
     codes.push(0)
@@ -111,7 +111,7 @@ export function stringToAnsiArray(str: string): Uint8Array {
  * @param u8 {Uint8Array}
  * @returns {string}
  */
-export function ansiArrayToString(u8: Uint8Array): string {
+export function ansiArrayToString(u8: Uint8Array<ArrayBuffer>): string {
     if (u8.length === 0 || u8[u8.length - 1] !== 0) throw new Error("can't decode ansi array without terminating 0 byte!")
     return Array.from(new Uint8Array(u8.buffer, u8.byteOffset, u8.byteLength - 1))
         .map(c => String.fromCharCode(c))
@@ -151,7 +151,7 @@ export function fileNameToDosFileName(fileName: string): string {
  * @param buf {ByteBuffer} the buffer to convert
  * @returns {Uint8Array} a new Uint8Array containing the
  */
-export function byteBufferAsUint8Array(buf: ByteBuffer): Uint8Array {
+export function byteBufferAsUint8Array(buf: ByteBuffer): Uint8Array<ArrayBuffer> {
     buf.limit = buf.offset
     buf.offset = 0
     return new Uint8Array(buf.toBuffer(true))
@@ -162,7 +162,7 @@ export function byteBufferAsUint8Array(buf: ByteBuffer): Uint8Array {
  * @param otherBuffer {ByteBuffer | ArrayBuffer | Uint8Array} other buffer to wrap into a ByteBuffer
  * @param initCap {number?} initial capacity. ignored if otherBuffer is given.
  */
-export function makeByteBuffer(initCap?: number, otherBuffer?: ByteBuffer | ArrayBuffer | Uint8Array): ByteBuffer {
+export function makeByteBuffer(initCap?: number, otherBuffer?: ByteBuffer | ArrayBuffer | Uint8Array<ArrayBuffer>): ByteBuffer {
     if (initCap != null && initCap < 0) throw new Error("initCap must be non-negative!")
     return otherBuffer == null ? new ByteBuffer(initCap || 1, ByteBuffer.LITTLE_ENDIAN) : ByteBuffer.wrap(otherBuffer, undefined, ByteBuffer.LITTLE_ENDIAN)
 }

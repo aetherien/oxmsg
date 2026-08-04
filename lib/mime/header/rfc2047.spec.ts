@@ -1,11 +1,11 @@
-import * as rfc2047 from "./rfc2047"
+import * as rfc2047 from "./rfc2047.js"
 import o from "ospec"
 
-const expectEncoding = (input, output) => o(rfc2047.encode(input)).equals(output)
+const expectEncoding = (input: string, output: string) => o(rfc2047.encode(input)).equals(output)
 
-const expectDecoding = (input, output) => o(rfc2047.decode(input)).equals(output)
+const expectDecoding = (input: string, output: string) => o(rfc2047.decode(input)).equals(output)
 
-const expectRoundtrip = (input, output) => {
+const expectRoundtrip = (input: string, output: string) => {
     expectEncoding(input, output)
     expectDecoding(output, input)
 }
@@ -59,13 +59,13 @@ o.spec("rfc2047", function () {
     })
     o.spec("#encode()", function () {
         o("should handle non-string values correctly", function () {
-            expectEncoding(-1, "-1")
-            expectEncoding(Infinity, "Infinity")
-            expectEncoding(false, "false")
-            expectEncoding(true, "true")
-            expectEncoding(/bla/, "/bla/")
-            expectEncoding(undefined, "")
-            expectEncoding(null, "")
+            expectEncoding(-1 as unknown as string, "-1")
+            expectEncoding(Infinity as unknown as string, "Infinity")
+            expectEncoding(false as unknown as string, "false")
+            expectEncoding(true as unknown as string, "true")
+            expectEncoding(/bla/ as unknown as string, "/bla/")
+            expectEncoding(undefined as unknown as string, "")
+            expectEncoding(null as unknown as string, "")
         })
         o("should handle a tab character at the beginning of a word", function () {
             expectEncoding("\tfoo", " foo")
@@ -88,13 +88,13 @@ o.spec("rfc2047", function () {
     })
     o.spec("#decode()", function () {
         o("should handle non-string values correctly", function () {
-            expectDecoding(-1, "-1")
-            expectDecoding(Infinity, "Infinity")
-            expectDecoding(false, "false")
-            expectDecoding(true, "true")
-            expectDecoding(/bla/, "/bla/")
-            expectDecoding(undefined, "")
-            expectDecoding(null, "")
+            expectDecoding(-1 as unknown as string, "-1")
+            expectDecoding(Infinity as unknown as string, "Infinity")
+            expectDecoding(false as unknown as string, "false")
+            expectDecoding(true as unknown as string, "true")
+            expectDecoding(/bla/ as unknown as string, "/bla/")
+            expectDecoding(undefined as unknown as string, "")
+            expectDecoding(null as unknown as string, "")
         })
         o("should decode encoded word with invalid quoted-printable, decodeURIComponent case", function () {
             expectDecoding("=?UTF-8?Q?=xxfoo?=", "=xxfoo")

@@ -1,10 +1,10 @@
 import CFB from "cfb"
-import {CFBStorage} from "./cfb_storage"
-import {MessageClass, MessageIconIndex, PropertyFlag} from "./enums"
-import type {PropertyTag} from "./property_tags"
-import {PropertyTagLiterals, PropertyTags} from "./property_tags"
-import {TopLevelProperties} from "./streams/top_level_properties"
-import {NamedProperties} from "./streams/named_properties"
+import {CFBStorage} from "./cfb_storage.js"
+import {MessageClass, MessageIconIndex, PropertyFlag} from "./enums.js"
+import type {PropertyTag} from "./property_tags.js"
+import {PropertyTagLiterals, PropertyTags} from "./property_tags.js"
+import {TopLevelProperties} from "./streams/top_level_properties.js"
+import {NamedProperties} from "./streams/named_properties.js"
 // Setting the RootStorage CLSID to this will cause outlook to parse the msg file and import the full email contents,
 // rather than just storing it as a file/inserting it as an attachment
 // *I am unclear on whether this behaviour can be relied upon, or if it is a fluke*. Will outlook always use this CLSID? will it always interpret an MSG purely based on the CLSID?
@@ -64,7 +64,7 @@ export class Message {
      * representation
      *
      */
-    saveToBuffer(): Uint8Array {
+    saveToBuffer(): Uint8Array<ArrayBuffer> {
         this._save()
 
         return this._storage.toBytes()

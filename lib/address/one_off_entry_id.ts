@@ -1,7 +1,7 @@
-import {Address} from "./address"
-import type {AddressType} from "../enums"
-import {MessageFormat} from "../enums"
-import {byteBufferAsUint8Array, makeByteBuffer, stringToUtf16LeArray} from "../utils/utils"
+import {Address} from "./address.js"
+import type {AddressType} from "../enums.js"
+import {MessageFormat} from "../enums.js"
+import {byteBufferAsUint8Array, makeByteBuffer, stringToUtf16LeArray} from "../utils/utils.js"
 
 export class OneOffEntryId extends Address {
     private readonly _messageFormat: MessageFormat

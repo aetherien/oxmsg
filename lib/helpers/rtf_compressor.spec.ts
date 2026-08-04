@@ -1,11 +1,11 @@
 import o from "ospec"
-import {stringToUtf8Array} from "../utils/utils"
-import {compress} from "./rtf_compressor"
-import fs from "fs"
-import {uint8ToBase16} from "../../test/utils"
+import {stringToUtf8Array} from "../utils/utils.js"
+import {compress} from "./rtf_compressor.js"
+import fs from "node:fs"
+import {uint8ToBase16} from "../../test/utils.js"
 
 // big list of naughty strings converted to escaped rtf
-const inStrings = JSON.parse(fs.readFileSync("test/blns.out.json", {encoding: "utf8"}))
+const inStrings: Array<string> = JSON.parse(fs.readFileSync("test/blns.out.json", {encoding: "utf8"}))
 // blns rtf compressed with MsgKit
 const outStrings = JSON.parse(fs.readFileSync("test/blns.out.compressed.json", {encoding: "utf8"}))
 const suite = inStrings.map((s, i) => ({

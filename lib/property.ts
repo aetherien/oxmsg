@@ -11,9 +11,9 @@ export class Property {
     readonly type: PropertyType
     readonly _flags: number
     private readonly _multiValue: boolean
-    readonly _data: Uint8Array
+    readonly _data: Uint8Array<ArrayBuffer>
 
-    constructor(obj: { id: number; type: PropertyType; data: Uint8Array; multiValue?: boolean; flags?: number }) {
+    constructor(obj: { id: number; type: PropertyType; data: Uint8Array<ArrayBuffer>; multiValue?: boolean; flags?: number }) {
         this.id = obj.id
         this.type = obj.type
         this._data = obj.data

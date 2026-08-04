@@ -1,10 +1,10 @@
-import {Address} from "./address"
-import {AddressType, MapiObjectType, RecipientRowDisplayType, RecipientType} from "../enums"
-import {PropertyTagLiterals, PropertyTags} from "../property_tags"
-import {generateEntryId, generateInstanceKey, generateSearchKey} from "../utils/mapi"
-import {RecipientProperties} from "../streams/recipient_properties"
-import {X8} from "../utils/utils"
-import type {CFBStorage} from "../cfb_storage"
+import {Address} from "./address.js"
+import {AddressType, MapiObjectType, RecipientRowDisplayType, RecipientType} from "../enums.js"
+import {PropertyTagLiterals, PropertyTags} from "../property_tags.js"
+import {generateEntryId, generateInstanceKey, generateSearchKey} from "../utils/mapi.js"
+import {RecipientProperties} from "../streams/recipient_properties.js"
+import {X8} from "../utils/utils.js"
+import type {CFBStorage} from "../cfb_storage.js"
 
 /**
  * Wrapper around a list of recipients

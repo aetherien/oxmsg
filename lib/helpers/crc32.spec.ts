@@ -1,9 +1,9 @@
 import o from "ospec"
-import {Crc32} from "./crc32"
+import {Crc32} from "./crc32.js"
 import ByteBuffer from "bytebuffer"
-import {makeByteBuffer} from "../utils/utils"
+import {makeByteBuffer} from "../utils/utils.js"
 // test vectors generated with MsgKit
-const TEST_VECTORS = {
+const TEST_VECTORS: Record<string, number> = {
     "6bd6d63e9bfaad34dd7834855964ef6d8b88cf678a028aa2ba0fa041b740221d41de7cd6c0ce83f6388cecabad2d3927": 1123334631,
     d76608bc4cd0694c33838c596b7d9d5517447be818adbc04d92ffd15def58dd579b9dfda1960f40e128a8c4af79ccc0f4f5695e8be3f6f2aa903: 1944757927,
     "1dd2536d3df5b6e0b19dc23bb6506cd58e20720d3c62edc68860a416394ab531167dd73bbf1c4e5441bc1a72": 3652142290,

@@ -44,7 +44,7 @@ export class CFBStorage {
      * @param content {Uint8Array} the contents of the stream
      * @return {void}
      * */
-    addStream(name: string, content: Uint8Array): void {
+    addStream(name: string, content: Uint8Array<ArrayBuffer>): void {
         const entryIndex = this._getEntryIndex(name)
 
         if (entryIndex < 0) {
@@ -60,14 +60,14 @@ export class CFBStorage {
      * @return {Uint8Array} the contents of the named stream, empty if it wasn't found
      * TODO: should this be absolute?
      */
-    getStream(name: string): Uint8Array {
+    getStream(name: string): Uint8Array<ArrayBuffer> {
         const entryIndex = this._getEntryIndex(name)
 
         return entryIndex < 0 ? Uint8Array.of() : Uint8Array.from(this._cfb.FileIndex[entryIndex].content)
     }
 
     /** write the contents of the cfb container to a byte array */
-    toBytes(): Uint8Array {
+    toBytes(): Uint8Array<ArrayBuffer> {
         return Uint8Array.from(CFB.write(this._cfb) as any)
     }
 

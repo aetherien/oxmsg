@@ -1,10 +1,13 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../build/test",
+    "types": ["*"],
+    "rootDir": "..",
+    "outDir": "../javascript",
     "declaration": false,
     "declarationDir": null,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "module": "nodenext"
   },
   "include": [
     ".",

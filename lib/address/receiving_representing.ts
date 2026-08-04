@@ -1,7 +1,7 @@
-import {Address} from "./address"
-import type {AddressType} from "../enums"
-import {TopLevelProperties} from "../streams/top_level_properties"
-import {PropertyTags} from "../property_tags"
+import {Address} from "./address.js"
+import type {AddressType} from "../enums.js"
+import {TopLevelProperties} from "../streams/top_level_properties.js"
+import {PropertyTags} from "../property_tags.js"
 
 export class ReceivingRepresenting extends Address {
     constructor(email: string, displayName: string, addressType: AddressType = "SMTP") {

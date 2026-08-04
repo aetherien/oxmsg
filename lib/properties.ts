@@ -126,8 +126,8 @@ export class Properties extends Array<Property> {
 
             case PropertyType.PT_BINARY:
                 // TODO: make user convert object to Uint8Array and just assign.
-                if (value instanceof Uint8Array) {
-                    data = value
+                if (value instanceof Uint8Array && value.buffer instanceof ArrayBuffer) {
+                    data = value as Uint8Array<ArrayBuffer>
                     break
                 }
 

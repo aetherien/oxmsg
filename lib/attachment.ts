@@ -4,7 +4,7 @@ import {fileNameToDosFileName, getPathExtension, isNullOrEmpty} from "./utils/ut
 import {getMimeType} from "./utils/mime.js"
 import {Properties} from "./properties.js"
 import {AttachmentFlags, AttachmentType, MapiObjectType, PropertyFlag, StoreSupportMaskConst} from "./enums.js"
-import {CFBStorage} from "./cfb_storage";
+import {CFBStorage} from "./cfb_storage.js";
 
 export class Attachment {
     readonly data: Uint8Array

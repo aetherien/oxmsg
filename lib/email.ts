@@ -179,7 +179,7 @@ export class Email extends Message {
         return this
     }
 
-    msg(): Uint8Array {
+    msg(): Uint8Array<ArrayBuffer> {
         this._writeToStorage()
 
         return super.saveToBuffer()

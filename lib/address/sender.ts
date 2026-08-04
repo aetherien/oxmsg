@@ -1,9 +1,9 @@
-import type {AddressType} from "../enums"
-import {MessageFormat} from "../enums"
-import {Address} from "./address"
-import {PropertyTags} from "../property_tags"
-import type {TopLevelProperties} from "../streams/top_level_properties"
-import {OneOffEntryId} from "./one_off_entry_id"
+import type {AddressType} from "../enums.js"
+import {MessageFormat} from "../enums.js"
+import {Address} from "./address.js"
+import {PropertyTags} from "../property_tags.js"
+import type {TopLevelProperties} from "../streams/top_level_properties.js"
+import {OneOffEntryId} from "./one_off_entry_id.js"
 
 export class Sender extends Address {
     private readonly _messageFormat: MessageFormat

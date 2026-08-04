@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "module": "nodenext",
+    "types": ["*"],
+    "rootDir": ".",
     "lib": [
       "es2020",
       "dom"
@@ -7,12 +10,12 @@
     "target": "es2020",
     "declaration": true,
     "declarationDir": "./dist/types",
-    "outDir": "./dist",
+    "outDir": "./javascript",
     "skipLibCheck": true,
 
     "noEmitOnError": true,
     "noErrorTruncation": true,
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
 
@@ -23,7 +26,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noEmit": true
+    "noEmit": false,
   },
   "include": [
     "lib",
@@ -33,5 +36,5 @@
     "node_modules",
     "dist",
     "lib/**/*.spec.ts"
-  ]
+  ],
 }
