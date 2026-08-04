@@ -1,12 +1,12 @@
 {
   "name": "@tutao/oxmsg",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "js library for Microsoft Outlook Item files (.msg)",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc --build --force && rollup --config rollup.config.js",
     "exec:nodejs": "node examples/node.js",
-    "clean": "rm -rf ./dist ./build",
+    "clean": "rm -rf ./dist ./build ./javascript",
     "types": "tsc",
     "test": "tsc --build --force test/tsconfig.json && rollup --config rollup_test.config.js && node 'build/test/index.js'"
   },
