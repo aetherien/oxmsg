@@ -100,6 +100,12 @@ export class Email extends Message {
         return this
     }
 
+    bodyRtf(rtf: string, compressed: boolean = false): Email {
+        this._bodyRtf = rtf
+        this.bodyRtfCompressed = compressed
+        return this
+    }
+
     bodyFormat(fmt: MessageEditorFormat): Email {
         this.messageEditorFormat = fmt
         return this
