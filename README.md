@@ -2,6 +2,9 @@
 
 write Microsoft .msg Outlook Item files.
 
+Forked from:
+https://github.com/tutao/oxmsg
+
 ## MSG Outlook Items
 These are compound files in cfb format, which is a simplified 
 filesystem-in-a-file with directories (called storages) and files (called streams).

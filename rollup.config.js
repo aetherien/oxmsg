@@ -8,7 +8,7 @@ export default {
 	plugins: [
 		alias({
 			entries: {
-				"uuid": path.resolve("./node_modules/uuid/dist/esm-node/index.js"),
+				"uuid": path.resolve("./node_modules/uuid/dist/index.js"),
 			}
 		}),
 		nodeResolve({
