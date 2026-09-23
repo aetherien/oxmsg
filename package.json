@@ -8,6 +8,7 @@
     "exec:nodejs": "node examples/node.js",
     "clean": "rm -rf ./dist ./build ./javascript",
     "types": "tsc",
+    "update": "npx npm-check-updates -u && npm install && npm update",
     "test": "tsc --build --force test/tsconfig.json && rollup --config rollup_test.config.js && node build/test/index.js"
   },
   "files": [
@@ -44,6 +45,7 @@
     "@types/iconv-lite": "0.0.1",
     "@types/ospec": "4.2.0",
     "@types/uuid": "11.0.0",
+    "npm-check-updates": "^23.1.0",
     "ospec": "4.2.1",
     "rollup": "4.63.4",
     "typescript": "7.0.2"
