@@ -1,6 +1,6 @@
 import {byteBufferAsUint8Array, makeByteBuffer} from "../utils/utils.js"
 import {PropertyTagLiterals} from "../property_tags.js"
-import type ByteBuffer from "bytebuffer"
+import type {ByteBuffer} from "../utils/byte_buffer.js"
 import {PropertyKind} from "../enums.js"
 import {CFBStorage} from "../cfb_storage.js"
 

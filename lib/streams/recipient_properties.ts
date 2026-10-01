@@ -1,6 +1,6 @@
 import {Properties} from "../properties.js"
 import type {CFBStorage} from "../cfb_storage.js"
-import type ByteBuffer from "bytebuffer"
+import type {ByteBuffer} from "../utils/byte_buffer.js"
 
 /**
  * The properties stream contained inside an Recipient storage object.

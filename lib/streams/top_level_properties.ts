@@ -1,5 +1,5 @@
 import {Properties} from "../properties.js"
-import type ByteBuffer from "bytebuffer"
+import type {ByteBuffer} from "../utils/byte_buffer.js"
 import type {CFBStorage} from "../cfb_storage.js"
 
 /**

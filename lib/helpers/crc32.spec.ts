@@ -1,6 +1,6 @@
 import o from "ospec"
 import {Crc32} from "./crc32.js"
-import ByteBuffer from "bytebuffer"
+import {ByteBuffer} from "../utils/byte_buffer.js"
 import {makeByteBuffer} from "../utils/utils.js"
 // test vectors generated with MsgKit
 const TEST_VECTORS: Record<string, number> = {

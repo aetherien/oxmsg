@@ -1,4 +1,4 @@
-import ByteBuffer from "bytebuffer"
+import {ByteBuffer} from "../utils/byte_buffer.js"
 
 const CRC32_TABLE = [
     0x00000000,

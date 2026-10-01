@@ -1,7 +1,7 @@
 import {PropertyTagLiterals, PropertyTags, PropertyTagsEnum} from "./property_tags.js"
 import {PropertyFlag, PropertyType} from "./enums.js"
 import {Property} from "./property.js"
-import ByteBuffer from "bytebuffer"
+import {ByteBuffer} from "./utils/byte_buffer.js"
 import {
     bigInt64ToParts,
     byteBufferAsUint8Array,

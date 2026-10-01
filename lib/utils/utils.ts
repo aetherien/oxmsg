@@ -1,7 +1,7 @@
 import type {PropertyTag} from "../property_tags.js"
 import {PropertyTagLiterals} from "../property_tags.js"
 import type {Property} from "../property.js"
-import ByteBuffer from "bytebuffer"
+import {ByteBuffer} from "./byte_buffer.js"
 import {Locale} from "./lcid.js"
 
 function Xp(n: number, p: number): string {

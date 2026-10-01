@@ -1,4 +1,4 @@
-import ByteBuffer from "bytebuffer"
+import {ByteBuffer} from "../utils/byte_buffer.js"
 import {byteBufferAsUint8Array, makeByteBuffer, stringToUtf8Array} from "../utils/utils.js"
 import {Crc32} from "./crc32.js"
 
