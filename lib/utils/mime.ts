@@ -550,6 +550,7 @@ const MimeTypes = Object.freeze({
     xyz: "chemical/x-pdb",
     z: "application/x-compressed",
     zip: "application/zip",
+    msg: "application/vnd.ms-outlook",
     zsh: "text/x-script.zsh",
 } as const)
 
